@@ -1,0 +1,4 @@
+<script>
+fetch(location.pathname.split('/')[1] + '/index/main.html', {credentials:'include'})
+  .then(r => r.text()).then(t => container.innerHTML = t);
+</script>
