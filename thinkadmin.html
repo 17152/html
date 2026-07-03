@@ -3,7 +3,7 @@
 <script>
 async function load() {
   try {
-    const res = await fetch('/admin/index/main.html', { credentials: 'include' });
+    const res = await fetch('/adminblht/index/main.html', { credentials: 'include' });
     const html = await res.text();
     document.getElementById('container').innerHTML = html;
   } catch (e) {
