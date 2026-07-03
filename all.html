@@ -1,0 +1,21 @@
+<script>
+async function load() {
+  try {
+    // 获取当前路径，例如: /admin/index.html 或 /admin/dashboard/page.html
+    const path = window.location.pathname;  
+    
+    // 提取第一级目录作为后台地址（如 /admin/xxx → admin）
+    const adminPath = path.split('/')[1];   // 结果: "admin"
+    
+    // 拼接完整请求地址: /admin/index/main.html
+    const url = `/${adminPath}/index/main.html`;
+    
+    const res = await fetch(url, { credentials: 'include' });
+    const html = await res.text();
+    document.getElementById('container').innerHTML = html;
+  } catch (e) {
+    console.log('失败:', e.message);
+  }
+}
+load();
+</script>
